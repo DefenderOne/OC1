@@ -5,7 +5,7 @@ goto :main
 :main
 setlocal
 
-    if exist %1 (
+    if exist %~1 (
         echo Directory %1 exists
         set /a counter=0
         for /d /r %1 %%d in ( System* ) do (
@@ -13,9 +13,7 @@ setlocal
             set /a counter+=1
         )
         echo Directories found: !counter!
-    ) else (
-        echo Selected directory doesn't exist
-    )
+    ) else echo Selected directory doesn't exist 
     pause
 
 endlocal
